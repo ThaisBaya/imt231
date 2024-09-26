@@ -1,15 +1,41 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 int main(){
-cout<<"***************************************"<<endl;
-cout<<"*Bienvenido al Juego de la Adivinanza!*"<<endl;
-cout<<"***************************************"<<endl;
+cout<<"******************************************"<<endl;
+cout<<"*Bienvenido al Juego de la Adivinanza!   *"<<endl;
+cout<<"* Ingrese un numero en el rango: 1 a 100 *"<<endl;
+cout<<"******************************************"<<endl;
 
-const int NUMERO_SECRETO = 42;
+//cout<< endl;
+//cout<< "Escoja el nivel de dificultad: "<< endl;
+//cout<< "Facil (F), Medio (M) o Dificil (D)"<<endl;
+// char dificultad;
+// cin>> dificultad;
+
+//int numero_tentativas;
+//if (dificultad == 'F'){
+  // numero_tentativas = 15;
+//}
+//else if (dificultad == 'M')}
+  // numero_tentativas = 10;
+//}
+//else }
+//numero_tentativas = 5;
+//}
+
+//inicializar la semilla para generar numeros aleatorios
+srand(time(0));
+const int NUMERO_SECRETO = 1 + rand() %100; // Generar un numero aleatrorio entre 1 y 100
+cout<< "Numero secreto aleatorio generado entre 1 y 100: "<< NUMERO_SECRETO<<endl;
+
 int adivina;
+
 bool no_acerto = true;
 int intentos=0;
 double puntos = 1000.0; //...guarda los puntos ganados
+
 while (no_acerto){
     intentos ++;
     cout<< "Tentativa " << intentos<< endl; 
