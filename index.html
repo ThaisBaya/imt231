@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación de Proyecto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            background-image: url('{{ url_for('static', filename='fondo.jpg') }}');
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .integrantes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .integrante {
+            text-align: center;
+            margin: 10px;
+        }
+        .integrante img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .proyecto-fotos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .proyecto-fotos img {
+            max-width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Determinar la "Madurez de las frutas segun su color"</h1>
+        <h2>Materia: Programacion superior </h2>
+    </div>
+
+    <div class="section">
+        <h3>Información General</h3>
+        <p><strong>Docente:</strong> MSc.SERGIO HERNÁN VALENZUELA CAMARA </p>
+        <p><strong>Lugar:</strong> Cochabamba</p>
+        <p><strong>Fecha:</strong> 5 de diciembre de 2024</p>
+    </div>
+
+    <div class="section">
+        <h3>Integrantes del Grupo</h3>
+        <div class="integrantes">
+            <div class="integrante">
+                <img src="{{ url_for('static', filename='Emi.jpg')}}" width='300' height='300'   alt="Emi.jpg">
+                <p>Emilyn Ramirez Ramirez</p>
+                <p>emilyn.ramirez@ucb.edu.bo</p>
+            </div>
+            <div class="integrante">
+                <img src="{{ url_for('static', filename='Thais.jpg')}}" width='300' height='300'  alt="Thais.jpg">
+                <p>Thais Baya Mendez</p>
+                <p>thais.baya@ucb.edu.bo</p>
+            </div>
+            <div class="integrante">
+                <img src="{{ url_for('static', filename='Cris.jpg')}}" width='300' height='300'  alt="Cris.jpg">
+                <p>Cristopher Limpias</p>
+                <p>cristopher.limpias@ucb.edu.bo</p>
+            </div>
+            <div class="integrante">
+                <img src="{{ url_for('static', filename='Mari.jpg')}}" width='300' height='300'  alt="Mari.jpg">
+                <p>Marian Pillco Apaza</p>
+                <p>marian.pillco@ucb.edu.bo</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Descripción del Proyecto</h3>
+        <p>El objetivo principal del proyecto fue desarrollar un sistema capaz de detectar la madurez de frutas utilizando una cámara y técnicas de visión
+        artificial, implementadas a través de la librería OpenCV.
+</p>
+        <h3>Metodología</h3>
+        <p>Para que la Raspberry Pi fuera capaz de reconocer objetos (en este caso, frutas) mediante una cámara, fue necesario implementar el uso de OpenCV,
+        una librería de código abierto ampliamente utilizada para el procesamiento de imágenes y visión por computadora. Fue necesario instalar el paquete de
+        OpenCV directamente en la Raspberry mediante los siguientes comandos en su terminal:
+  </p>
+            <li>sudo apt update </li>
+            <li>sudo apt upgrade</li>
+            <li>sudo apt install python3-opencv</li>
+
+       <p>Una vez instalado el paquete de OpenCV y el código base de detección de madurez de frutas,
+       se conectó una cámara web a la Raspberry para corroborar que pudiera reconocer las frutas y analizar su madurez.
+       Posteriormente, se hicieron modificaciones en el código para que, cuando se detectara una fruta madura, un LED verde se encendiera
+       simultáneamente; en caso contrario, se encendería un LED amarillo.
+ </p>
+
+ <p>Tras finalizar las modificaciones, se conectó la Raspberry a un protoboard para que sus señales llegaran a los LEDs mediante cables jumper.
+ Se realizaron pruebas para verificar el funcionamiento del programa. Finalmente, se constató que la Raspberry fue capaz de procesar el código y analizar
+ la madurez de las frutas con eficacia.</p>
+
+        <div class="proyecto-fotos">
+            <img src="{{ url_for('static', filename='pro1.jpg')}}" width='300' height='300' alt="pro1.jpg">
+            <img src="{{ url_for('static', filename='pro2.jpg')}}" width='300' height='300' alt="pro2.jpg">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Materiales y Recursos</h3>
+        <ul>
+            <li>Raspberry Pi</li>
+            <li>Protoboard</li>
+            <li>LEDs</li>
+            <li>Cables Jumper</li>
+            <li>Camara Web</li>
+            <li>Pythonanywhere</li>
+            <img src="{{ url_for('static', filename='rasp.jpg')}}" width='300' height='176' alt="rasp.jpg">
+            <img src="{{ url_for('static', filename='prot.jpg')}}" width='250' height='121' alt="prot.jpg">
+            <img src="{{ url_for('static', filename='led.jpg')}}" width='200' height='200' alt="led.jpg">
+            <img src="{{ url_for('static', filename='cables.jpg')}}" width='256' height='177' alt="cables.jpg">
+            <img src="{{ url_for('static', filename='cam.jpg')}}" width='200' height='200' alt="cam.jpg">
+            <img src="{{ url_for('static', filename='python.jpg')}}" width='200' height='200' alt="python.jpg">
+        </ul>
+    </div>
+</body>
+</html>
